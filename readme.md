@@ -1,4 +1,4 @@
-# Laravel Primer
+# Property Owner's Democracy
 
 [![Build Status](https://travis-ci.org/RufusMbugua/laravel-primer.svg?branch=master)](https://travis-ci.org/RufusMbugua/laravel-primer)
 [![Maintainability](https://api.codeclimate.com/v1/badges/a99a88d28ad37a79dbf6/maintainability)](https://codeclimate.com/github/codeclimate/codeclimate/maintainability)
@@ -12,9 +12,11 @@
 [![forthebadge](https://forthebadge.com/images/badges/built-with-love.svg)](https://forthebadge.com)
 [![forthebadge](https://forthebadge.com/images/badges/built-with-science.svg)](https://forthebadge.com)
 
-A not-so-barebones implementation of Laravel 5.x with my go-to packages. 
+A marketplace connecting customers and contractors alike.
 
-See the underlying sauce [here](README_Laravel.md).
+See the underlying sauce:
+> * [Laravel](README_Laravel.md).
+> * [Voyager](https://github.com/the-control-group/voyager/blob/1.1/README.md)
 
 ## Components
 + RESTful API - Coming Soon
