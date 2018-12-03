@@ -17,8 +17,7 @@ test:
 
 deploy:
   stage: deploy
-  environment:
-    - name: production
+  environment: production
   image: tetraweb/php:7.0    
   script: 
     - ./deployment/deploy-staging.sh
