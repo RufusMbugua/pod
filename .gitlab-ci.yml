@@ -12,7 +12,7 @@ test:
   stage: test
   script:
     - composer install
-    - phpunit
+    - ./vendor/bin/phpunit
 
 deploy:
   stage: deploy
