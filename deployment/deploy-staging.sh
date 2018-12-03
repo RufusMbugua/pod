@@ -1,6 +1,6 @@
 #!/bin/sh
 # SSH into ther server
-ssh rufusmbugua.com
+ssh rufusmbugua@rufusmbugua.com
 
 # Change Directory
 cd /var/www/icarus
