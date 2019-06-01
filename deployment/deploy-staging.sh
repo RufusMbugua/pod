@@ -1,12 +1,3 @@
 #!/bin/sh
 # SSH into ther server
-ssh rufusmbugua@rufusmbugua.com
-
-# Change Directory
-cd /var/www/icarus
-
-# Update Codebase
-git pull origin develop
-
-# Update Dependencies
-composer install
+ssh rufusmbugua@rufusmbugua.com 'bash -s' < ./scripts.sh
