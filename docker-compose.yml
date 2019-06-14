@@ -1,21 +1,46 @@
-version: '2'
+version: '3'
+
 services:
+  # Database
   db:
-    image: mysql:latest
-    command: --default-authentication-plugin=mysql_native_password
-    restart: always
-    environment:
-      MYSQL_ROOT_PASSWORD: example
-  adminer:
-    image: adminer
-    restart: always
-    ports:
-      - 8080:8080
-  web:
-    image: rufusmbugua/laravel-5
-    ports:
-    - 1080:80
+    image: mysql:5.7
     volumes:
-    - /var/www/pod:/var/www/html
+      - db_data:/var/lib/mysql
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: password
+      MYSQL_DATABASE: mpb
+      MYSQL_USER: root
+      MYSQL_PASSWORD: password
+    networks:
+      - default
+  # phpmyadmin
+  phpmyadmin:
     depends_on:
-    - db
+      - db
+    image: phpmyadmin/phpmyadmin
+    restart: unless-stopped
+    ports:
+      - '8080:80'
+    environment:
+      PMA_HOST: db
+      MYSQL_ROOT_PASSWORD: password
+    networks:
+      - default
+  # www
+  www:
+    depends_on:
+      - db
+    build: .
+    ports:
+      - "8001:80"
+    volumes:
+      - ./www:/var/www/html/
+    links:
+      - db
+    networks:
+      - default
+networks:
+  default:
+volumes:
+  db_data:

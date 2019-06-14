@@ -74,6 +74,7 @@ return [
         'string'  => 'The :attribute must be less than or equal :value characters.',
         'array'   => 'The :attribute must not have more than :value items.',
     ],
+    'json'                 => 'The :attribute must be a valid JSON string.',
     'max'                  => [
         'numeric' => 'The :attribute may not be greater than :max.',
         'file'    => 'The :attribute may not be greater than :max kilobytes.',

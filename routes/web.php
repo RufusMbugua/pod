@@ -23,3 +23,7 @@ Route::get('/login', function () {
 Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();
 });
+    
+
+Route::post('login', 'Auth\AuthenticateController@login');
+Route::get('logout', 'Auth\AuthenticateController@logout');

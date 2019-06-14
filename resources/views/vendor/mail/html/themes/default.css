@@ -1,24 +1,19 @@
 /* Base */
 
-body, body *:not(html):not(style):not(br):not(tr):not(code) {
+body,
+body *:not(html):not(style):not(br):not(tr):not(code) {
     font-family: Avenir, Helvetica, sans-serif;
     box-sizing: border-box;
 }
 
 body {
-    background-color: #f5f8fa;
+    background-color: #F2F4F6;
     color: #74787E;
     height: 100%;
-    hyphens: auto;
     line-height: 1.4;
     margin: 0;
-    -moz-hyphens: auto;
-    -ms-word-break: break-all;
     width: 100% !important;
-    -webkit-hyphens: auto;
     -webkit-text-size-adjust: none;
-    word-break: break-all;
-    word-break: break-word;
 }
 
 p,
@@ -36,6 +31,7 @@ a {
 a img {
     border: none;
 }
+
 
 /* Typography */
 
@@ -79,6 +75,7 @@ img {
     max-width: 100%;
 }
 
+
 /* Layout */
 
 .wrapper {
@@ -100,6 +97,7 @@ img {
     -premailer-width: 100%;
 }
 
+
 /* Header */
 
 .header {
@@ -114,6 +112,7 @@ img {
     text-decoration: none;
     text-shadow: 0 1px 0 white;
 }
+
 
 /* Body */
 
@@ -139,6 +138,7 @@ img {
     -premailer-width: 570px;
 }
 
+
 /* Subcopy */
 
 .subcopy {
@@ -150,6 +150,7 @@ img {
 .subcopy p {
     font-size: 12px;
 }
+
 
 /* Footer */
 
@@ -169,6 +170,7 @@ img {
     text-align: center;
 }
 
+
 /* Tables */
 
 .table table {
@@ -182,7 +184,6 @@ img {
 .table th {
     border-bottom: 1px solid #EDEFF2;
     padding-bottom: 8px;
-    margin: 0;
 }
 
 .table td {
@@ -190,12 +191,12 @@ img {
     font-size: 15px;
     line-height: 18px;
     padding: 10px 0;
-    margin: 0;
 }
 
 .content-cell {
     padding: 35px;
 }
+
 
 /* Buttons */
 
@@ -242,6 +243,7 @@ img {
     border-left: 18px solid #bf5329;
 }
 
+
 /* Panels */
 
 .panel {
@@ -261,6 +263,7 @@ img {
     margin-bottom: 0;
     padding-bottom: 0;
 }
+
 
 /* Promotions */
 
