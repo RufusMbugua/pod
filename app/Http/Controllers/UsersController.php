@@ -15,7 +15,7 @@ use Spatie\Permission\Models\Permission;
 use App\Http\Resources\User as UserResource;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 
-class UsersController extends Controller
+class UserController extends Controller
 {
     use ApiResponses;
 

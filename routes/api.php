@@ -20,7 +20,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 // sign up,registration etc request routes...
 
 Route::group(['prefix' => 'auth'], function () {
-    Route::post('login', 'AuthController@login');
+    Route::post('login', ['as' => 'login','uses' => 'AuthController@login']);
 
     Route::group(['middleware' => 'auth:api'], function() {
         Route::get('logout', 'AuthController@logout');
@@ -45,3 +45,5 @@ Route::group(['prefix' => 'v1','middleware' => 'auth:api'], function () {
     Route::apiResource('users', 'UserController');
    
 });
+
+Route::resource('property', 'PropertyController');
