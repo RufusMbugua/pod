@@ -6,10 +6,11 @@ services:
     image: mysql:5.7
     volumes:
       - db_data:/var/lib/mysql
+      - ./mysql/my.cnf:/etc/mysql/my.cnf
     restart: unless-stopped
     environment:
       MYSQL_ROOT_PASSWORD: password
-      MYSQL_DATABASE: mpb
+      MYSQL_DATABASE: pod
       MYSQL_USER: root
       MYSQL_PASSWORD: password
     networks:
@@ -27,20 +28,37 @@ services:
       MYSQL_ROOT_PASSWORD: password
     networks:
       - default
-  # www
-  www:
+  # php
+  app:
     depends_on:
       - db
     build: .
-    ports:
-      - "8001:80"
     volumes:
-      - ./www:/var/www/html/
+      - .:/var/www/
+      - ./php/local.ini:/usr/local/etc/php/conf.d/local.ini
     links:
       - db
+    environment:
+      SERVICE_NAME: app
+      SERVICE_TAGS: dev
     networks:
       - default
+  #Nginx Service
+  webserver:
+    image: nginx:alpine
+    container_name: webserver
+    restart: unless-stopped
+    tty: true
+    ports:
+      - "8001:80"
+      - "443:443"
+    networks:
+      - default
+    volumes:
+      - ./:/var/www
+      - ./nginx/conf.d/:/etc/nginx/conf.d/
 networks:
   default:
 volumes:
   db_data:
+    driver: local
