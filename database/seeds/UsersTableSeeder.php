@@ -22,7 +22,7 @@ class UsersTableSeeder extends Seeder
 
         $users = array(
 
-            ['fname' => 'Master','lname' => 'Yoda', 'phone' => '+254720123123','email' => 'yoda@mail.com','username' => 'yoda@mail.com','password' => bcrypt('secretitis')]
+            ['name' => 'Master', 'phone' => '+254720123123','email' => 'yoda@mail.com','username' => 'yoda@mail.com','password' => bcrypt('secretitis')]
 
         );
 

@@ -69,8 +69,7 @@ class UserController extends Controller
         try {
 
             $validator = Validator::make($request->all(), [
-                'fname' => 'required|string',
-                'lname' => 'required|string',
+                'name' => 'required|string',
                 'phone' => 'required|integer',
                 'email' => 'required|string|email|unique:users',
                 'password' => 'required|string|confirmed',
@@ -82,8 +81,7 @@ class UserController extends Controller
             }
 
             $user = new User([
-                'fname' => $request->fname,
-                'lname' => $request->lname,
+                'name' => $request->name,
                 'phone' => $request->phone,
                 'email' => $request->email,
                 'password' => bcrypt($request->password)
@@ -145,8 +143,7 @@ class UserController extends Controller
     {
 
         $validator = Validator::make($request->all(), [
-            'fname' => 'required|string',
-            'lname' => 'required|string',
+            'name' => 'required|string',
             'phone' => 'required|string',
             'edit_password' => 'required|boolean',
             'email' => 'required|string|email',
@@ -159,8 +156,7 @@ class UserController extends Controller
 
         try {
             $user = User::findOrFail($id);
-            $user->fname = $request->input('fname');
-            $user->lname = $request->input('lname');
+            $user->name = $request->input('name');
             $user->phone = $request->input('phone');
             $user->email = $request->input('email');
 

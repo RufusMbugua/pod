@@ -95,12 +95,11 @@ class AuthenticateController extends Controller
             //dd($user);
         $user_id=$user->id;
         $email=$user->email;
-        $first_name=$user->fname;
-        $last_name=$user->lname;
+        $name=$user->name;
         $last_login=$user->last_login;
 
         return Response::json(
-            compact('id','user_id','email','first_name','last_name','last_login','role','token')
+            compact('id','user_id','email','name','last_login','role','token')
             , 200, array(), JSON_PRETTY_PRINT);
 
 
