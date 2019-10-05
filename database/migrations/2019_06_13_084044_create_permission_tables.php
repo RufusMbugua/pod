@@ -15,7 +15,8 @@ class CreatePermissionTables extends Migration
     {
         $tableNames = config('permission.table_names');
         $columnNames = config('permission.column_names');
-
+        Schema::drop('permissions');
+        Schema::drop('roles');
         Schema::create($tableNames['permissions'], function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
